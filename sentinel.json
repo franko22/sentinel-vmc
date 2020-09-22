@@ -1,0 +1,25 @@
+{
+  "mock": {
+    "tfconfig": "mock-tfconfig.sentinel",
+    "tfconfig/v1": "mock-tfconfig.sentinel",
+    "tfconfig/v2": "mock-tfconfig-v2.sentinel",
+    "tfplan": "mock-tfplan.sentinel",
+    "tfplan/v1": "mock-tfplan.sentinel",
+    "tfplan/v2": "mock-tfplan-v2.sentinel",
+    "tfrun": "mock-tfrun.sentinel",
+    "tfstate": "mock-tfstate.sentinel",
+    "tfstate/v1": "mock-tfstate.sentinel",
+    "tfstate/v2": "mock-tfstate-v2.sentinel"
+  },
+  "modules": {
+    "tfplan-functions": {
+      "path": "common-functions/tfplan-functions/tfplan-functions.sentinel"
+    },
+    "tfconfig-functions": {
+      "path": "common-functions/tfconfig-functions/tfconfig-functions.sentinel"
+    },
+    "tfstate-functions": {
+      "path": "common-functions/tfstate-functions/tfstate-functions.sentinel"
+    }
+  }
+}

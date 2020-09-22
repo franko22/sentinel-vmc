@@ -1,0 +1,223 @@
+import "strings"
+
+providers = {
+	"vmc": {
+		"alias": "",
+		"config": {
+			"org_id": {
+				"references": [
+					"var.org_id",
+				],
+			},
+			"refresh_token": {
+				"references": [
+					"var.refresh_token",
+				],
+			},
+		},
+		"module_address":      "",
+		"name":                "vmc",
+		"provider_config_key": "vmc",
+		"version_constraint":  "",
+	},
+}
+
+resources = {
+	"data.terraform_remote_state.aws-core": {
+		"address": "data.terraform_remote_state.aws-core",
+		"config": {
+			"backend": {
+				"constant_value": "remote",
+			},
+			"config": {
+				"constant_value": {
+					"organization": "grantorchard",
+					"workspaces": {
+						"name": "terraform-vmc-aws-core",
+					},
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "aws-core",
+		"provider_config_key": "terraform",
+		"provisioners":        [],
+		"type":                "terraform_remote_state",
+	},
+	"data.vmc_connected_accounts.this": {
+		"address": "data.vmc_connected_accounts.this",
+		"config": {
+			"account_number": {
+				"references": [
+					"local.aws_account_number",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "this",
+		"provider_config_key": "vmc",
+		"provisioners":        [],
+		"type":                "vmc_connected_accounts",
+	},
+	"vmc_sddc.this": {
+		"address": "vmc_sddc.this",
+		"config": {
+			"account_link_sddc_config": [
+				{
+					"connected_account_id": {
+						"references": [
+							"data.vmc_connected_accounts.this",
+						],
+					},
+					"customer_subnet_ids": {
+						"references": [
+							"local.public_subnets",
+						],
+					},
+				},
+			],
+			"delay_account_link": {
+				"constant_value": false,
+			},
+			"deployment_type": {
+				"constant_value": "SingleAZ",
+			},
+			"host_instance_type": {
+				"references": [
+					"var.host_instance_type",
+				],
+			},
+			"num_host": {
+				"references": [
+					"var.sddc_num_hosts",
+				],
+			},
+			"provider_type": {
+				"constant_value": "AWS",
+			},
+			"region": {
+				"references": [
+					"var.region",
+				],
+			},
+			"sddc_name": {
+				"references": [
+					"var.sddc_name",
+				],
+			},
+			"sddc_type": {
+				"constant_value": "1NODE",
+			},
+			"skip_creating_vxlan": {
+				"constant_value": false,
+			},
+			"sso_domain": {
+				"references": [
+					"var.sso_domain",
+				],
+			},
+			"timeouts": {
+				"constant_value": null,
+			},
+			"vpc_cidr": {
+				"references": [
+					"var.vmc_vpc_cidr",
+				],
+			},
+			"vxlan_subnet": {
+				"references": [
+					"var.vxlan_subnet",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "this",
+		"provider_config_key": "vmc",
+		"provisioners":        [],
+		"type":                "vmc_sddc",
+	},
+}
+
+provisioners = {}
+
+variables = {
+	"host_instance_type": {
+		"default":        "I3_METAL",
+		"description":    "",
+		"module_address": "",
+		"name":           "host_instance_type",
+	},
+	"org_id": {
+		"default":        null,
+		"description":    "",
+		"module_address": "",
+		"name":           "org_id",
+	},
+	"refresh_token": {
+		"default":        null,
+		"description":    "",
+		"module_address": "",
+		"name":           "refresh_token",
+	},
+	"region": {
+		"default":        "eu-west-2",
+		"description":    "",
+		"module_address": "",
+		"name":           "region",
+	},
+	"sddc_name": {
+		"default":        "VMCandTFC",
+		"description":    "",
+		"module_address": "",
+		"name":           "sddc_name",
+	},
+	"sddc_num_hosts": {
+		"default":        1,
+		"description":    "",
+		"module_address": "",
+		"name":           "sddc_num_hosts",
+	},
+	"sso_domain": {
+		"default":        "vmc.local",
+		"description":    "",
+		"module_address": "",
+		"name":           "sso_domain",
+	},
+	"vmc_vpc_cidr": {
+		"default":        "10.2.0.0/16",
+		"description":    "",
+		"module_address": "",
+		"name":           "vmc_vpc_cidr",
+	},
+	"vxlan_subnet": {
+		"default":        "10.10.10.0/23",
+		"description":    "",
+		"module_address": "",
+		"name":           "vxlan_subnet",
+	},
+}
+
+outputs = {}
+
+module_calls = {}
+
+strip_index = func(addr) {
+	s = strings.split(addr, ".")
+	for s as i, v {
+		s[i] = strings.split(v, "[")[0]
+	}
+
+	return strings.join(s, ".")
+}

@@ -1,0 +1,17 @@
+import "tfconfig-functions" as config
+
+allowed_resources_list = [
+  "vmc_sddc",
+]
+
+# Get all Resources
+allResources = config.find_all_resources()
+
+# Filter to resources with violations
+violatingResources = config.filter_attribute_not_in_list(allResources,
+                     "type", allowed_resources_list, true)
+
+# Main rule
+main = rule {
+ length(violatingResources["messages"]) is 0
+}

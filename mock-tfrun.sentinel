@@ -1,0 +1,52 @@
+created_at = "2020-09-21T03:52:05.883Z"
+message = "Merge pull request #1 from grantorchard/development\n\nrefactored code for more variable usage"
+speculative = false
+is_destroy = false
+target_addrs = null
+
+variables = {
+	"AWS_REGION": {
+		"category":  "env",
+		"sensitive": false,
+	},
+	"ORG_ID": {
+		"category":  "env",
+		"sensitive": true,
+	},
+	"org_id": {
+		"category":  "terraform",
+		"sensitive": false,
+	},
+	"refresh_token": {
+		"category":  "terraform",
+		"sensitive": true,
+	},
+	"region": {
+		"category":  "terraform",
+		"sensitive": false,
+	},
+}
+
+organization = {
+	"name": "grantorchard",
+}
+
+workspace = {
+	"auto_apply":  false,
+	"created_at":  "2020-09-16T23:22:34.699Z",
+	"description": null,
+	"name":        "terraform-vmc-single-node",
+	"vcs_repo": {
+		"branch":             "master",
+		"display_identifier": "grantorchard/terraform-vmc-single-node",
+		"identifier":         "grantorchard/terraform-vmc-single-node",
+		"ingress_submodules": false,
+	},
+	"working_directory": "",
+}
+
+cost_estimate = {
+	"delta_monthly_cost":    "0.0",
+	"prior_monthly_cost":    "0.0",
+	"proposed_monthly_cost": "0.0",
+}

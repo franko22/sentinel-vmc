@@ -1,0 +1,15 @@
+import "tfplan-functions" as plan
+
+permitted_sddc_type = ["1NODE"]
+
+# Get all SDDCs
+allSDDCs = plan.find_resources("vmc_sddc")
+
+# Filter to resources with violations
+violatingSDDCs = plan.filter_attribute_not_in_list(allSDDCs,
+  "sddc_type", permitted_sddc_type, true)
+
+# Main rule
+main = rule {
+ length(violatingSDDCs["messages"]) is 0
+}

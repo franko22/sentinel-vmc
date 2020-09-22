@@ -1,0 +1,765 @@
+terraform_version = "0.13.3"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"vmc_connected_accounts.this": {
+			"address":        "vmc_connected_accounts.this",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "data",
+			"module_address": "",
+			"name":           "this",
+			"provider_name":  "registry.terraform.io/terraform-providers/vmc",
+			"tainted":        false,
+			"type":           "vmc_connected_accounts",
+			"values": {
+				"account_number": "711129375688",
+				"id":             "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+				"provider_type":  "AWS",
+			},
+		},
+		"vmc_sddc.this": {
+			"address":        "vmc_sddc.this",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "this",
+			"provider_name":  "registry.terraform.io/terraform-providers/vmc",
+			"tainted":        false,
+			"type":           "vmc_sddc",
+			"values": {
+				"account_link_sddc_config": [
+					{
+						"connected_account_id": "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+						"customer_subnet_ids": [
+							"subnet-0d3e8c5966fa8c5b0",
+						],
+					},
+				],
+				"availability_zones": [
+					"eu-west-2a",
+				],
+				"cloud_password": "BqmH-48-OUIlpoC",
+				"cloud_username": "cloudadmin@vmc.local",
+				"cluster_id":     null,
+				"cluster_info": {
+					"cluster_id":         "9098b122-7421-46ce-b894-0e490d80830a",
+					"cluster_name":       "Cluster-1",
+					"cluster_state":      "READY",
+					"host_instance_type": "i3.metal",
+				},
+				"delay_account_link": false,
+				"deployment_type":    "SingleAZ",
+				"host_instance_type": "I3_METAL",
+				"id":                 "27a1689a-8c08-4c32-a379-0cf29eb0868f",
+				"nsxt_reverse_proxy_url": "https://nsx-3-11-144-202.rp.vmwarevmc.com/vmc/reverse-proxy/api/orgs/b7793958-b6b6-4916-a008-40c5c47ec24c/sddcs/27a1689a-8c08-4c32-a379-0cf29eb0868f/sks-nsxt-manager",
+				"num_host":               1,
+				"provider_type":          "AWS",
+				"region":                 "eu-west-2",
+				"sddc_name":              "VMCandTFC",
+				"sddc_state":             "READY",
+				"sddc_template_id":       null,
+				"sddc_type":              "1NODE",
+				"skip_creating_vxlan":    false,
+				"sso_domain":             "vmc.local",
+				"storage_capacity":       null,
+				"timeouts": {
+					"create": "300m",
+					"delete": "180m",
+					"update": "300m",
+				},
+				"vc_url":       "https://vcenter.sddc-3-11-144-202.vmwarevmc.com/",
+				"vpc_cidr":     "10.2.0.0/16",
+				"vxlan_subnet": "10.10.10.0/23",
+			},
+		},
+	},
+}
+
+variables = {
+	"host_instance_type": {
+		"name":  "host_instance_type",
+		"value": "I3_METAL",
+	},
+	"org_id": {
+		"name":  "org_id",
+		"value": "b7793958-b6b6-4916-a008-40c5c47ec24c",
+	},
+	"refresh_token": {
+		"name":  "refresh_token",
+		"value": "67fQR762bPwPPQgmkR8CBX7gvRYPgGvpzSpJeksI5trpmmTLDP8MA2WdHuBF1df3",
+	},
+	"region": {
+		"name":  "region",
+		"value": "eu-west-2",
+	},
+	"sddc_name": {
+		"name":  "sddc_name",
+		"value": "VMCandTFC",
+	},
+	"sddc_num_hosts": {
+		"name":  "sddc_num_hosts",
+		"value": 1,
+	},
+	"sso_domain": {
+		"name":  "sso_domain",
+		"value": "vmc.local",
+	},
+	"vmc_vpc_cidr": {
+		"name":  "vmc_vpc_cidr",
+		"value": "10.2.0.0/16",
+	},
+	"vxlan_subnet": {
+		"name":  "vxlan_subnet",
+		"value": "10.10.10.0/23",
+	},
+}
+
+resource_changes = {
+	"data.vmc_connected_accounts.this": {
+		"address": "data.vmc_connected_accounts.this",
+		"change": {
+			"actions": [
+				"no-op",
+			],
+			"after": {
+				"account_number": "711129375688",
+				"id":             "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+				"provider_type":  "AWS",
+			},
+			"after_unknown": {},
+			"before": {
+				"account_number": "711129375688",
+				"id":             "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+				"provider_type":  "AWS",
+			},
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "data",
+		"module_address": "",
+		"name":           "this",
+		"provider_name":  "registry.terraform.io/terraform-providers/vmc",
+		"type":           "vmc_connected_accounts",
+	},
+	"vmc_sddc.this": {
+		"address": "vmc_sddc.this",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"account_link_sddc_config": [
+					{
+						"connected_account_id": "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+						"customer_subnet_ids": [
+							"subnet-0d3e8c5966fa8c5b0",
+						],
+					},
+				],
+				"availability_zones": [
+					"eu-west-2a",
+				],
+				"cloud_password": "BqmH-48-OUIlpoC",
+				"cloud_username": "cloudadmin@vmc.local",
+				"cluster_id":     null,
+				"cluster_info": {
+					"cluster_id":         "9098b122-7421-46ce-b894-0e490d80830a",
+					"cluster_name":       "Cluster-1",
+					"cluster_state":      "READY",
+					"host_instance_type": "i3.metal",
+				},
+				"delay_account_link": false,
+				"deployment_type":    "SingleAZ",
+				"host_instance_type": "I3_METAL",
+				"id":                 "27a1689a-8c08-4c32-a379-0cf29eb0868f",
+				"nsxt_reverse_proxy_url": "https://nsx-3-11-144-202.rp.vmwarevmc.com/vmc/reverse-proxy/api/orgs/b7793958-b6b6-4916-a008-40c5c47ec24c/sddcs/27a1689a-8c08-4c32-a379-0cf29eb0868f/sks-nsxt-manager",
+				"num_host":               1,
+				"provider_type":          "AWS",
+				"region":                 "eu-west-2",
+				"sddc_name":              "VMCandTFC",
+				"sddc_state":             "READY",
+				"sddc_template_id":       null,
+				"sddc_type":              "1NODE",
+				"skip_creating_vxlan":    false,
+				"sso_domain":             "vmc.local",
+				"storage_capacity":       null,
+				"timeouts": {
+					"create": "300m",
+					"delete": "180m",
+					"update": "300m",
+				},
+				"vc_url":       "https://vcenter.sddc-3-11-144-202.vmwarevmc.com/",
+				"vpc_cidr":     "10.2.0.0/16",
+				"vxlan_subnet": "10.10.10.0/23",
+			},
+			"after_unknown": {},
+			"before": {
+				"account_link_sddc_config": [
+					{
+						"connected_account_id": "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+						"customer_subnet_ids": [
+							"subnet-0d3e8c5966fa8c5b0",
+						],
+					},
+				],
+				"availability_zones": [
+					"eu-west-2a",
+				],
+				"cloud_password": "BqmH-48-OUIlpoC",
+				"cloud_username": "cloudadmin@vmc.local",
+				"cluster_id":     null,
+				"cluster_info": {
+					"cluster_id":         "9098b122-7421-46ce-b894-0e490d80830a",
+					"cluster_name":       "Cluster-1",
+					"cluster_state":      "READY",
+					"host_instance_type": "i3.metal",
+				},
+				"delay_account_link": false,
+				"deployment_type":    "SingleAZ",
+				"host_instance_type": "I3_METAL",
+				"id":                 "27a1689a-8c08-4c32-a379-0cf29eb0868f",
+				"nsxt_reverse_proxy_url": "https://nsx-3-11-144-202.rp.vmwarevmc.com/vmc/reverse-proxy/api/orgs/b7793958-b6b6-4916-a008-40c5c47ec24c/sddcs/27a1689a-8c08-4c32-a379-0cf29eb0868f/sks-nsxt-manager",
+				"num_host":               1,
+				"provider_type":          "AWS",
+				"region":                 "eu-west-2",
+				"sddc_name":              "VMCandTFC",
+				"sddc_state":             "READY",
+				"sddc_template_id":       null,
+				"sddc_type":              "1NODE",
+				"skip_creating_vxlan":    false,
+				"sso_domain":             "vmc.local",
+				"storage_capacity":       null,
+				"timeouts": {
+					"create": "300m",
+					"delete": "180m",
+					"update": "300m",
+				},
+				"vc_url":       "https://vcenter.sddc-3-11-144-202.vmwarevmc.com/",
+				"vpc_cidr":     "10.2.0.0/16",
+				"vxlan_subnet": "10.10.10.0/23",
+			},
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "this",
+		"provider_name":  "registry.terraform.io/terraform-providers/vmc",
+		"type":           "vmc_sddc",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"vmc": {
+				"expressions": {
+					"org_id": {
+						"references": [
+							"var.org_id",
+						],
+					},
+					"refresh_token": {
+						"references": [
+							"var.refresh_token",
+						],
+					},
+				},
+				"name": "vmc",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "vmc_sddc.this",
+					"expressions": {
+						"account_link_sddc_config": [
+							{
+								"connected_account_id": {
+									"references": [
+										"data.vmc_connected_accounts.this",
+									],
+								},
+								"customer_subnet_ids": {
+									"references": [
+										"local.public_subnets",
+									],
+								},
+							},
+						],
+						"delay_account_link": {
+							"constant_value": false,
+						},
+						"deployment_type": {
+							"constant_value": "SingleAZ",
+						},
+						"host_instance_type": {
+							"references": [
+								"var.host_instance_type",
+							],
+						},
+						"num_host": {
+							"references": [
+								"var.sddc_num_hosts",
+							],
+						},
+						"provider_type": {
+							"constant_value": "AWS",
+						},
+						"region": {
+							"references": [
+								"var.region",
+							],
+						},
+						"sddc_name": {
+							"references": [
+								"var.sddc_name",
+							],
+						},
+						"sddc_type": {
+							"constant_value": "1NODE",
+						},
+						"skip_creating_vxlan": {
+							"constant_value": false,
+						},
+						"sso_domain": {
+							"references": [
+								"var.sso_domain",
+							],
+						},
+						"timeouts": {},
+						"vpc_cidr": {
+							"references": [
+								"var.vmc_vpc_cidr",
+							],
+						},
+						"vxlan_subnet": {
+							"references": [
+								"var.vxlan_subnet",
+							],
+						},
+					},
+					"mode":                "managed",
+					"name":                "this",
+					"provider_config_key": "vmc",
+					"schema_version":      0,
+					"type":                "vmc_sddc",
+				},
+				{
+					"address": "data.terraform_remote_state.aws-core",
+					"expressions": {
+						"backend": {
+							"constant_value": "remote",
+						},
+						"config": {
+							"constant_value": {
+								"organization": "grantorchard",
+								"workspaces": {
+									"name": "terraform-vmc-aws-core",
+								},
+							},
+						},
+					},
+					"mode":                "data",
+					"name":                "aws-core",
+					"provider_config_key": "terraform",
+					"schema_version":      0,
+					"type":                "terraform_remote_state",
+				},
+				{
+					"address": "data.vmc_connected_accounts.this",
+					"expressions": {
+						"account_number": {
+							"references": [
+								"local.aws_account_number",
+							],
+						},
+					},
+					"mode":                "data",
+					"name":                "this",
+					"provider_config_key": "vmc",
+					"schema_version":      0,
+					"type":                "vmc_connected_accounts",
+				},
+			],
+			"variables": {
+				"host_instance_type": {
+					"default": "I3_METAL",
+				},
+				"org_id":        {},
+				"refresh_token": {},
+				"region": {
+					"default": "eu-west-2",
+				},
+				"sddc_name": {
+					"default": "VMCandTFC",
+				},
+				"sddc_num_hosts": {
+					"default": 1,
+				},
+				"sso_domain": {
+					"default": "vmc.local",
+				},
+				"vmc_vpc_cidr": {
+					"default": "10.2.0.0/16",
+				},
+				"vxlan_subnet": {
+					"default": "10.10.10.0/23",
+				},
+			},
+		},
+	},
+	"format_version": "0.1",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":        "data.vmc_connected_accounts.this",
+					"mode":           "data",
+					"name":           "this",
+					"provider_name":  "registry.terraform.io/terraform-providers/vmc",
+					"schema_version": 0,
+					"type":           "vmc_connected_accounts",
+					"values": {
+						"account_number": "711129375688",
+						"id":             "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+						"provider_type":  "AWS",
+					},
+				},
+				{
+					"address":        "vmc_sddc.this",
+					"mode":           "managed",
+					"name":           "this",
+					"provider_name":  "registry.terraform.io/terraform-providers/vmc",
+					"schema_version": 0,
+					"type":           "vmc_sddc",
+					"values": {
+						"account_link_sddc_config": [
+							{
+								"connected_account_id": "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+								"customer_subnet_ids": [
+									"subnet-0d3e8c5966fa8c5b0",
+								],
+							},
+						],
+						"availability_zones": [
+							"eu-west-2a",
+						],
+						"cloud_password": "BqmH-48-OUIlpoC",
+						"cloud_username": "cloudadmin@vmc.local",
+						"cluster_id":     null,
+						"cluster_info": {
+							"cluster_id":         "9098b122-7421-46ce-b894-0e490d80830a",
+							"cluster_name":       "Cluster-1",
+							"cluster_state":      "READY",
+							"host_instance_type": "i3.metal",
+						},
+						"delay_account_link": false,
+						"deployment_type":    "SingleAZ",
+						"host_instance_type": "I3_METAL",
+						"id":                 "27a1689a-8c08-4c32-a379-0cf29eb0868f",
+						"nsxt_reverse_proxy_url": "https://nsx-3-11-144-202.rp.vmwarevmc.com/vmc/reverse-proxy/api/orgs/b7793958-b6b6-4916-a008-40c5c47ec24c/sddcs/27a1689a-8c08-4c32-a379-0cf29eb0868f/sks-nsxt-manager",
+						"num_host":               1,
+						"provider_type":          "AWS",
+						"region":                 "eu-west-2",
+						"sddc_name":              "VMCandTFC",
+						"sddc_state":             "READY",
+						"sddc_template_id":       null,
+						"sddc_type":              "1NODE",
+						"skip_creating_vxlan":    false,
+						"sso_domain":             "vmc.local",
+						"storage_capacity":       null,
+						"timeouts": {
+							"create": "300m",
+							"delete": "180m",
+							"update": "300m",
+						},
+						"vc_url":       "https://vcenter.sddc-3-11-144-202.vmwarevmc.com/",
+						"vpc_cidr":     "10.2.0.0/16",
+						"vxlan_subnet": "10.10.10.0/23",
+					},
+				},
+			],
+		},
+	},
+	"prior_state": {
+		"format_version":    "0.1",
+		"terraform_version": "0.13.3",
+		"values": {
+			"root_module": {
+				"resources": [
+					{
+						"address":        "data.terraform_remote_state.aws-core",
+						"mode":           "data",
+						"name":           "aws-core",
+						"provider_name":  "terraform.io/builtin/terraform",
+						"schema_version": 0,
+						"type":           "terraform_remote_state",
+						"values": {
+							"backend": "remote",
+							"config": {
+								"organization": "grantorchard",
+								"workspaces": {
+									"name": "terraform-vmc-aws-core",
+								},
+							},
+							"defaults": null,
+							"outputs": {
+								"account_id": "711129375688",
+								"private_subnets": [
+									"subnet-0c2fc249743c23cc7",
+									"subnet-09aa6f0ed0c676314",
+									"subnet-0395e1b0aad0f88cd",
+								],
+								"public_subnets": [
+									"subnet-0d3e8c5966fa8c5b0",
+									"subnet-0dfc5d9cd06675a57",
+									"subnet-0c59ac8d1fa06e535",
+								],
+								"security_group_outbound": "sg-06008e449514081d8",
+								"security_group_ssh":      "sg-09ff1ca8676c97951",
+								"vpc_id":                  "vpc-039c20033edfb7224",
+							},
+							"workspace": null,
+						},
+					},
+					{
+						"address":        "data.vmc_connected_accounts.this",
+						"mode":           "data",
+						"name":           "this",
+						"provider_name":  "registry.terraform.io/terraform-providers/vmc",
+						"schema_version": 0,
+						"type":           "vmc_connected_accounts",
+						"values": {
+							"account_number": "711129375688",
+							"id":             "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+							"provider_type":  "AWS",
+						},
+					},
+					{
+						"address": "vmc_sddc.this",
+						"depends_on": [
+							"data.terraform_remote_state.aws-core",
+							"data.vmc_connected_accounts.this",
+						],
+						"mode":           "managed",
+						"name":           "this",
+						"provider_name":  "registry.terraform.io/terraform-providers/vmc",
+						"schema_version": 0,
+						"type":           "vmc_sddc",
+						"values": {
+							"account_link_sddc_config": [
+								{
+									"connected_account_id": "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+									"customer_subnet_ids": [
+										"subnet-0d3e8c5966fa8c5b0",
+									],
+								},
+							],
+							"availability_zones": [
+								"eu-west-2a",
+							],
+							"cloud_password": "BqmH-48-OUIlpoC",
+							"cloud_username": "cloudadmin@vmc.local",
+							"cluster_id":     null,
+							"cluster_info": {
+								"cluster_id":         "9098b122-7421-46ce-b894-0e490d80830a",
+								"cluster_name":       "Cluster-1",
+								"cluster_state":      "READY",
+								"host_instance_type": "i3.metal",
+							},
+							"delay_account_link": false,
+							"deployment_type":    "SingleAZ",
+							"host_instance_type": "I3_METAL",
+							"id":                 "27a1689a-8c08-4c32-a379-0cf29eb0868f",
+							"nsxt_reverse_proxy_url": "https://nsx-3-11-144-202.rp.vmwarevmc.com/vmc/reverse-proxy/api/orgs/b7793958-b6b6-4916-a008-40c5c47ec24c/sddcs/27a1689a-8c08-4c32-a379-0cf29eb0868f/sks-nsxt-manager",
+							"num_host":               1,
+							"provider_type":          "AWS",
+							"region":                 "eu-west-2",
+							"sddc_name":              "VMCandTFC",
+							"sddc_state":             "READY",
+							"sddc_template_id":       null,
+							"sddc_type":              "1NODE",
+							"skip_creating_vxlan":    false,
+							"sso_domain":             "vmc.local",
+							"storage_capacity":       null,
+							"timeouts": {
+								"create": "300m",
+								"delete": "180m",
+								"update": "300m",
+							},
+							"vc_url":       "https://vcenter.sddc-3-11-144-202.vmwarevmc.com/",
+							"vpc_cidr":     "10.2.0.0/16",
+							"vxlan_subnet": "10.10.10.0/23",
+						},
+					},
+				],
+			},
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "data.vmc_connected_accounts.this",
+			"change": {
+				"actions": [
+					"no-op",
+				],
+				"after": {
+					"account_number": "711129375688",
+					"id":             "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+					"provider_type":  "AWS",
+				},
+				"after_unknown": {},
+				"before": {
+					"account_number": "711129375688",
+					"id":             "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+					"provider_type":  "AWS",
+				},
+			},
+			"mode":          "data",
+			"name":          "this",
+			"provider_name": "registry.terraform.io/terraform-providers/vmc",
+			"type":          "vmc_connected_accounts",
+		},
+		{
+			"address": "vmc_sddc.this",
+			"change": {
+				"actions": [
+					"no-op",
+				],
+				"after": {
+					"account_link_sddc_config": [
+						{
+							"connected_account_id": "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+							"customer_subnet_ids": [
+								"subnet-0d3e8c5966fa8c5b0",
+							],
+						},
+					],
+					"availability_zones": [
+						"eu-west-2a",
+					],
+					"cloud_password": "BqmH-48-OUIlpoC",
+					"cloud_username": "cloudadmin@vmc.local",
+					"cluster_id":     null,
+					"cluster_info": {
+						"cluster_id":         "9098b122-7421-46ce-b894-0e490d80830a",
+						"cluster_name":       "Cluster-1",
+						"cluster_state":      "READY",
+						"host_instance_type": "i3.metal",
+					},
+					"delay_account_link": false,
+					"deployment_type":    "SingleAZ",
+					"host_instance_type": "I3_METAL",
+					"id":                 "27a1689a-8c08-4c32-a379-0cf29eb0868f",
+					"nsxt_reverse_proxy_url": "https://nsx-3-11-144-202.rp.vmwarevmc.com/vmc/reverse-proxy/api/orgs/b7793958-b6b6-4916-a008-40c5c47ec24c/sddcs/27a1689a-8c08-4c32-a379-0cf29eb0868f/sks-nsxt-manager",
+					"num_host":               1,
+					"provider_type":          "AWS",
+					"region":                 "eu-west-2",
+					"sddc_name":              "VMCandTFC",
+					"sddc_state":             "READY",
+					"sddc_template_id":       null,
+					"sddc_type":              "1NODE",
+					"skip_creating_vxlan":    false,
+					"sso_domain":             "vmc.local",
+					"storage_capacity":       null,
+					"timeouts": {
+						"create": "300m",
+						"delete": "180m",
+						"update": "300m",
+					},
+					"vc_url":       "https://vcenter.sddc-3-11-144-202.vmwarevmc.com/",
+					"vpc_cidr":     "10.2.0.0/16",
+					"vxlan_subnet": "10.10.10.0/23",
+				},
+				"after_unknown": {},
+				"before": {
+					"account_link_sddc_config": [
+						{
+							"connected_account_id": "a5900011-2408-33df-8d9f-dad4f87fc6b8",
+							"customer_subnet_ids": [
+								"subnet-0d3e8c5966fa8c5b0",
+							],
+						},
+					],
+					"availability_zones": [
+						"eu-west-2a",
+					],
+					"cloud_password": "BqmH-48-OUIlpoC",
+					"cloud_username": "cloudadmin@vmc.local",
+					"cluster_id":     null,
+					"cluster_info": {
+						"cluster_id":         "9098b122-7421-46ce-b894-0e490d80830a",
+						"cluster_name":       "Cluster-1",
+						"cluster_state":      "READY",
+						"host_instance_type": "i3.metal",
+					},
+					"delay_account_link": false,
+					"deployment_type":    "SingleAZ",
+					"host_instance_type": "I3_METAL",
+					"id":                 "27a1689a-8c08-4c32-a379-0cf29eb0868f",
+					"nsxt_reverse_proxy_url": "https://nsx-3-11-144-202.rp.vmwarevmc.com/vmc/reverse-proxy/api/orgs/b7793958-b6b6-4916-a008-40c5c47ec24c/sddcs/27a1689a-8c08-4c32-a379-0cf29eb0868f/sks-nsxt-manager",
+					"num_host":               1,
+					"provider_type":          "AWS",
+					"region":                 "eu-west-2",
+					"sddc_name":              "VMCandTFC",
+					"sddc_state":             "READY",
+					"sddc_template_id":       null,
+					"sddc_type":              "1NODE",
+					"skip_creating_vxlan":    false,
+					"sso_domain":             "vmc.local",
+					"storage_capacity":       null,
+					"timeouts": {
+						"create": "300m",
+						"delete": "180m",
+						"update": "300m",
+					},
+					"vc_url":       "https://vcenter.sddc-3-11-144-202.vmwarevmc.com/",
+					"vpc_cidr":     "10.2.0.0/16",
+					"vxlan_subnet": "10.10.10.0/23",
+				},
+			},
+			"mode":          "managed",
+			"name":          "this",
+			"provider_name": "registry.terraform.io/terraform-providers/vmc",
+			"type":          "vmc_sddc",
+		},
+	],
+	"terraform_version": "0.13.3",
+	"variables": {
+		"host_instance_type": {
+			"value": "I3_METAL",
+		},
+		"org_id": {
+			"value": "b7793958-b6b6-4916-a008-40c5c47ec24c",
+		},
+		"refresh_token": {
+			"value": "67fQR762bPwPPQgmkR8CBX7gvRYPgGvpzSpJeksI5trpmmTLDP8MA2WdHuBF1df3",
+		},
+		"region": {
+			"value": "eu-west-2",
+		},
+		"sddc_name": {
+			"value": "VMCandTFC",
+		},
+		"sddc_num_hosts": {
+			"value": 1,
+		},
+		"sso_domain": {
+			"value": "vmc.local",
+		},
+		"vmc_vpc_cidr": {
+			"value": "10.2.0.0/16",
+		},
+		"vxlan_subnet": {
+			"value": "10.10.10.0/23",
+		},
+	},
+}
