@@ -1,11 +1,11 @@
 policy "validate-terraform-resources" {
     source = "./validate-terraform-resources.sentinel"
-    enforcement_level = "advisory"
+    enforcement_level = "hard-mandatory"
 }
 
 policy "validate-sddc-type" {
     source = "./validate-sddc-type.sentinel"
-    enforcement_level = "advisory"
+    enforcement_level = "hard-mandatory"
 }
 
 module "tfplan-functions" {
